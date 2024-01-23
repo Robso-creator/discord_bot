@@ -8,7 +8,7 @@ Bot para servidor de Discord
 
 1. Esteja logado na [plataforma](https://discord.com/);
 2. Acesse a [página de desenvolvedores](https://discord.com/developers/applications);
-3. Clique no botão de "Nova Aplicação" no canto superior direito:
+3. Clique no botão de "Nova Aplicação" no canto superior direito:<br>
 ![img.png](new_application_img.png)
 4.  Vá até a aba “Bot” e clique em “Add Bot”;
 >Mantenha as configurações padrão para Public Bot (marcado) e Require OAuth2 Code Grant (desmarcado).

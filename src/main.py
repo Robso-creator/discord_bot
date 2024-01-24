@@ -1,6 +1,7 @@
 import random
 
 import discord
+
 import settings
 
 intents = discord.Intents.default()

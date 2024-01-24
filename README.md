@@ -1,5 +1,5 @@
 # Bot do Discord
-<sub>Don't speak portuguese? [Click here]() to view this page in English</sub>
+<sub>Don't speak portuguese? [Click here](https://github.com/Robso-creator/discord_bot/blob/main/README-en.md) to view this page in English</sub>
 
 Este é um projeto de bot para Discord desenvolvido em Python 
 que oferece uma variedade de funcionalidades para 

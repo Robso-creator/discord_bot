@@ -1,5 +1,5 @@
 # Discord Bot
-<sub>Não fala inglês? [Clique aqui]() para ver esta página em português</sub>
+<sub>Não fala inglês? [Clique aqui](https://github.com/Robso-creator/discord_bot/blob/main/README.md) para ver esta página em português</sub>
 
 This is a Discord bot project developed in Python that offers a variety of features to enhance the user experience on Discord servers. The bot was created to be flexible, user-friendly, and expandable, allowing customization of commands and integration with other services.
 

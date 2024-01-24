@@ -24,3 +24,6 @@ breakpoint()
 
 client = MyClient(intents=intents)
 client.run(settings.DISCORD_TOKEN)
+
+
+# teste

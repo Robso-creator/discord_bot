@@ -1,6 +1,7 @@
-import os
 import random
+
 import discord
+
 import settings
 
 intents = discord.Intents.default()
@@ -11,15 +12,15 @@ intents.message_content = True
 
 
 class MyClient(discord.Client):
-
     async def on_ready(self):
-        print('Logged on as {0}!'.format(self.user))
+        print(f'Logged on as {self.user}!')
 
     async def on_message(self, message):
         print('message from {0.author}: {0.content}'.format(message))
         if message.content == ('!roleta'):
             await message.channel.send(
-                f'O sorteado foi: {self.users.copy()[random.randint(0, len(message.guild.members) - 1)]}')
+                f'O sorteado foi: {self.users.copy()[random.randint(0, len(message.guild.members) - 1)]}',
+            )
 
 
 client = MyClient(intents=intents)

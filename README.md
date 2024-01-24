@@ -1,10 +1,10 @@
 # Bot do Discord
 <sub>Don't speak portuguese? [Click here](https://github.com/Robso-creator/discord_bot/blob/main/README-en.md) to view this page in English</sub>
 
-Este é um projeto de bot para Discord desenvolvido em Python 
-que oferece uma variedade de funcionalidades para 
-enriquecer a experiência dos usuários em servidores Discord. 
-O bot foi criado para ser flexível, fácil de usar e expansível, 
+Este é um projeto de bot para Discord desenvolvido em Python
+que oferece uma variedade de funcionalidades para
+enriquecer a experiência dos usuários em servidores Discord.
+O bot foi criado para ser flexível, fácil de usar e expansível,
 permitindo a personalização de comandos e integração com outros serviços.
 
 # Sumário
@@ -16,7 +16,7 @@ permitindo a personalização de comandos e integração com outros serviços.
 
 # Criação de Tokens necessários
 
-Para que o bot funcione corretamente alguns tokens precisam ser fornecidos, 
+Para que o bot funcione corretamente alguns tokens precisam ser fornecidos,
 a seguir poderá entender como gerá-las
 ## Gerar conta de bot no discord
 <sub>Passo a passo de [freecodecamp](https://www.freecodecamp.org/portuguese/news/tutorial-de-criacao-de-bot-para-o-discord-em-python/)</sub>

@@ -1,3 +1,5 @@
+[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://github.com/pre-commit/pre-commit)
+
 # Bot do Discord
 <sub>Don't speak portuguese? [Click here](https://github.com/Robso-creator/discord_bot/blob/main/README-en.md) to view this page in English</sub>
 

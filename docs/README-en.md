@@ -22,7 +22,7 @@ For the bot to function properly, some tokens need to be provided. Below, you ca
 1. Be logged into the [platform](https://discord.com/).
 2. Access the [developer portal](https://discord.com/developers/applications).
 3. Click on the "New Application" button in the upper right corner:
-![img.png](new_application_img.png)
+![img.png](../static/new_application_img.png)
 4. Go to the "Bot" tab and click "Add Bot".
 > Keep the default settings for Public Bot (checked) and Require OAuth2 Code Grant (unchecked).
 5. Copy the Token; it will be used for bot authentication.

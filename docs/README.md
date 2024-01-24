@@ -19,7 +19,8 @@ permitindo a personalização de comandos e integração com outros serviços.
 # Criação de Tokens necessários
 
 Para que o bot funcione corretamente alguns tokens precisam ser fornecidos,
-a seguir poderá entender como gerá-las
+a seguir poderá entender como gerá-los
+
 ## Gerar conta de bot no discord
 <sub>Passo a passo de [freecodecamp](https://www.freecodecamp.org/portuguese/news/tutorial-de-criacao-de-bot-para-o-discord-em-python/)</sub>
 

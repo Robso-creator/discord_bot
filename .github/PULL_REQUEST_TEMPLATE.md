@@ -1,71 +1,69 @@
 <!--
 
-Antes de abrir um PR, garanta que seu código cumpre os seguintes checks:
+Antes de abrir um PR, certifique-se de que seu código atende aos seguintes critérios:
 
-- Revise seu código e faça QA dele como se fosse o usuário final. Garanta que ele faz tudo o que foi descrito no JIRA.
-- Dê rebase (ou faça um merge) da branch de destino com a sua e corrija conflitos.
-- Verifique se não esqueceu nenhum comentário, typos ou byebugs no código.
-- DRY (Don’t repeat yourself).
-- KISS (Keep it simple).
+- Revise seu código e faça QA como se fosse o usuário final. Garanta que ele realiza tudo o que foi descrito no JIRA.
+- Faça rebase (ou faça um merge) da branch de destino com a sua e corrija conflitos.
+- Verifique se não esqueceu nenhum comentário, erros de digitação ou bugs no código.
+- DRY (Don’t repeat yourself) - Não repita código desnecessariamente.
+- KISS (Keep it simple) - Mantenha-o simples.
 - YAGNI (You ain’t gonna need it) - Não faça coisas antecipadamente se você não precisa delas ainda.
 
-Caso tenha realizado todos os checks acima, continue e lembre-se de apagar seções que não fazem
-sentido para esse PR ou adicionar novas seções conforme necessário.
+Se você realizou todos os checks acima, prossiga e lembre-se de apagar seções que não fazem sentido para este PR ou adicionar novas conforme necessário.
 
 -->
 
-# Main contribution in this PR
+# Principais contribuições neste PR
 
-Describe as an item list what are the main contributions found in this PR.
+Descreva, em uma lista de itens, quais são as principais contribuições encontradas neste PR.
 
-- [x] Add a new method...
-- [x] Fix bugs related to...
+- [x] Adicionar um novo método...
+- [x] Corrigir bugs relacionados a...
 
-# Github issue
+# Issue no Github
 
-If this references a Github Issue, please provide it here. Note that github automatically creates a link to an Issue if
-it is referenced by number with a leading '#'.
+Se esta referenciar uma Issue no Github, forneça-a aqui. Note que o Github cria automaticamente um link para uma Issue se ela for referenciada por número com um '#' à frente.
 
 Issue #1
 
 
-## Screenshots
+## Capturas de tela
 
 
-## How to test
+## Como testar
 
 <!--
 
-The description of a test scenario (at least the happy flow) can help other developers who are not familiar with it.
-with the part of the code that was modified in this PR but want to see everything working before approving.
-This section might include step-by-step instructions on how to get to exactly where in the flow your code is changing.
-Ideally this would already be in JIRA so it can be copied and pasted here.
+A descrição de um cenário de teste (pelo menos o fluxo principal) pode ajudar outros desenvolvedores que não estão familiarizados com
+a parte do código que foi modificada neste PR, mas que desejam ver tudo funcionando antes de aprovar.
+Esta seção pode incluir instruções passo a passo sobre como chegar exatamente onde no fluxo o seu código está alterando.
+Idealmente, isso já estaria no JIRA para que possa ser copiado e colado aqui.
 
-Description example:
-- Login with the user `foo` from the company `bar` configured with the `foobar` option
-- Click on the `X` button on the interface
-- Wait for the system to return `Y`
+Exemplo de descrição:
+- Faça login com o usuário `foo` da empresa `bar` configurado com a opção `foobar`
+- Clique no botão `X` na interface
+- Aguarde o sistema retornar `Y`
 
 -->
 
 ## Emojis
 
-Emojis can be added to review comments to separate blocking and non-blocking comments.
+Emojis podem ser adicionados aos comentários de revisão para separar comentários que bloqueiam e não bloqueiam.
 
-Example: Compliments, small suggestions or questions that don't block a merge.
+Exemplo: Elogios, pequenas sugestões ou perguntas que não bloqueiam um merge.
 
-> 🟢 Liked the refactor!
+> 🟢 Gostei da refatoração!
 
-> 🟡 Why was this value removed?
+> 🟡 Por que esse valor foi removido?
 
-Example: Blocking feedbacks must be addressed before a merge.
+Exemplo: Feedbacks bloqueadores devem ser abordados antes de um merge.
 
-> 🔴 This change will break an important system flow
+> 🔴 Essa alteração quebrará um fluxo importante do sistema
 
-### Examples
+### Exemplos
 
-| Type | Examples | Description |
+| Tipo | Exemplos | Descrição |
 | --- | --- | --- |
-| Blocking | 🔴 ❌ 🚨 | Red emojis |
-| Non-blocking | 🟡 💡 🤔 💭 | Yellow emojis, pensive, etc |
-| Compliment | 🟢 💚 😍 👍 🙌 | Green emojis, hearts, positives, etc |
+| Bloqueador | 🔴 ❌ 🚨 | Emojis vermelhos |
+| Não bloqueador | 🟡 💡 🤔 💭 | Emojis amarelos, pensativos, etc. |
+| Elogio | 🟢 💚 😍 👍 🙌 | Emojis verdes, corações, positivos, etc. |

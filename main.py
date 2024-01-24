@@ -20,10 +20,7 @@ class MyClient(discord.Client):
         if message.content == ('!roleta'):
             await message.channel.send(
                 f'O sorteado foi: {self.users.copy()[random.randint(0, len(message.guild.members) - 1)]}')
-breakpoint()
+
 
 client = MyClient(intents=intents)
 client.run(settings.DISCORD_TOKEN)
-
-
-# teste

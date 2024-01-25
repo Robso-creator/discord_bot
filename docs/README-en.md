@@ -1,5 +1,6 @@
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://github.com/pre-commit/pre-commit)
 ![makefile](https://img.shields.io/badge/makefile-enabled-brightgreen?logo=gmail&logoColor=blue)
+[![pytest](https://img.shields.io/badge/pytest-enabled-brightgreen?logo=pytest&logoColor=#0A9EDC)](https://docs.pytest.org/en/7.4.x/)
 
 # Discord Bot
 <sub>Não fala inglês? [Clique aqui](https://github.com/Robso-creator/discord_bot/blob/main/README.md) para ver esta página em português</sub>

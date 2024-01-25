@@ -2,8 +2,6 @@ import random
 
 import discord
 
-import settings
-
 intents = discord.Intents.default()
 intents.typing = False
 intents.presences = False
@@ -23,5 +21,7 @@ class MyClient(discord.Client):
             )
 
 
-client = MyClient(intents=intents)
-client.run(settings.DISCORD_TOKEN)
+if __name__ == '__main__':
+    import settings
+    client = MyClient(intents=intents)
+    client.run(settings.DISCORD_TOKEN)

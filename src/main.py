@@ -26,7 +26,7 @@ class MyClient(discord.Client):
 
 
 if __name__ == '__main__':
-    import settings
+    from src import settings
 
     client = MyClient(intents=intents)
     client.run(settings.DISCORD_TOKEN)

@@ -1,32 +1,32 @@
-import random
-
 import discord
+from discord.ext import commands
 
+from src import settings
 from src.logger import setup_logger
-
-intents = discord.Intents.default()
-intents.typing = False
-intents.presences = False
-intents.members = True
-intents.message_content = True
 
 _log = setup_logger('src.main')
 
+intents = discord.Intents.default()
+intents.members = True
+intents.message_content = True
 
-class MyClient(discord.Client):
-    async def on_ready(self):
-        _log.info(f'Logged on as {self.user}!')
+bot = commands.Bot(command_prefix='/', intents=intents)
+server_id = discord.Object(settings.DISCORD_SERVER_ID)
 
-    async def on_message(self, message):
-        _log.info('message from {0.author}: {0.content}'.format(message))
-        if message.content == '!roleta':
-            await message.channel.send(
-                f'O sorteado foi: {self.users.copy()[random.randint(0, len(message.guild.members) - 1)]}',
-            )
 
+@bot.event
+async def on_ready():
+    _log.info('Logged')
+    try:
+        synced = await bot.tree.sync(guild=server_id)
+        _log.info(f'Synced {len(synced)} command(s)')
+    except Exception as e:
+        _log.error(e)
+
+
+@bot.tree.command(name='hello', guild=server_id, description='teste de descrição')
+async def hello(interaction: discord.Interaction):
+    await interaction.response.send_message('Hello World!!')
 
 if __name__ == '__main__':
-    from src import settings
-
-    client = MyClient(intents=intents)
-    client.run(settings.DISCORD_TOKEN)
+    bot.run(settings.DISCORD_TOKEN)

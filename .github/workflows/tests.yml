@@ -30,6 +30,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements-dev.txt
 
+      - name: Create .env
+        run: |
+          touch .env
+          echo DISCORD_SERVER_ID= ${{ secrets.DISCORD_SERVER_ID }} >> .env
+
       - name: Run Tests
         run: |
           python -m pytest

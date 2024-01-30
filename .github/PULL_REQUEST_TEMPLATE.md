@@ -15,16 +15,16 @@ Se você realizou todos os checks acima, prossiga e lembre-se de apagar seções
 
 # Principais contribuições neste PR
 
-Descreva, em uma lista de itens, quais são as principais contribuições encontradas neste PR.
+<!-- Descreva, em uma lista de itens, quais são as principais contribuições encontradas neste PR. -->
 
 - [x] Adicionar um novo método...
 - [x] Corrigir bugs relacionados a...
 
 # Issue no Github
 
-Se esta referenciar uma Issue no Github, forneça-a aqui. Note que o Github cria automaticamente um link para uma Issue se ela for referenciada por número com um '#' à frente.
+<!-- Se esta referenciando uma Issue no Github, forneça-a aqui. Note que o Github cria automaticamente um link para uma Issue se ela for referenciada por número com um '#' à frente. -->
 
-Issue #1
+Closes #1
 
 
 ## Capturas de tela

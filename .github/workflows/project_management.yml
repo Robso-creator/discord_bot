@@ -1,0 +1,31 @@
+on:
+  issues:
+    types:
+      - opened
+
+jobs:
+  issue-assignee:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Assignee
+        uses: actions/github-script@v3
+        with:
+          github-token: ${{ secrets.ISSUES }}
+          script: |
+            const assignee = 'Robso-creator';
+            const issueNumber = context.payload.issue.number;
+            const repo = context.repo.repo;
+
+            try {
+              await github.issues.addAssignees({
+                owner: context.repo.owner,
+                repo: repo,
+                issue_number: issueNumber,
+                assignees: [assignee],
+              });
+
+              console.log(`Responsável ${assignee} atribuído à issue #${issueNumber}`);
+            } catch (error) {
+              console.error('Erro ao atribuir responsável à issue:', error.message);
+              process.exit(1);
+            }

@@ -72,6 +72,7 @@ pip install -r requirements.txt
 6. Crie um arquivo `.env` na sua pasta na pasta `root` do projeto: <br>
 ```terminal
 DISCORD_TOKEN=
+DISCORD_SERVER_ID=
 NASA_TOKEN=DEMO_KEY
 ```
 7. Execute o arquivo .py: <br>

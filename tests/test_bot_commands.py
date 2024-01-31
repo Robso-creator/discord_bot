@@ -1,15 +1,16 @@
+import pytest
+
 from src.main import bot
-from src.main import server_id
 
 
-def test_hello_command():
+@pytest.mark.asyncio
+async def test_hello_command():
+    await bot.on_ready()
     command_name = 'hello'
     command_description = 'teste de descrição'
-
     test_command = next(
         (
-            c for c in bot.tree.walk_commands(
-                guild=server_id,
+            c for c in bot.walk_application_commands(
             ) if c.name == command_name
         ),
         None,
@@ -26,8 +27,7 @@ def test_help_command():
 
     test_command = next(
         (
-            c for c in bot.tree.walk_commands(
-                guild=server_id,
+            c for c in bot.walk_application_commands(
             ) if c.name == command_name
         ),
         None,

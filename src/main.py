@@ -1,21 +1,17 @@
+import os
+from logging import DEBUG
 from typing import Optional
 
 import discord
-from discord import app_commands
-from discord.ext import commands
 from discord.ui import Button
 from discord.ui import View
 
 from src import settings
 from src.logger import setup_logger
 
-_log = setup_logger('src.main')
+_log = setup_logger('src.main', level=DEBUG)
 
-intents = discord.Intents.default()
-intents.members = True
-intents.message_content = True
-
-bot = commands.Bot(command_prefix='/', intents=intents)
+bot = discord.Bot()
 server_id = discord.Object(settings.DISCORD_SERVER_ID)
 
 
@@ -23,20 +19,36 @@ server_id = discord.Object(settings.DISCORD_SERVER_ID)
 async def on_ready():
     _log.info('Logged')
     try:
-        synced = await bot.tree.sync(guild=server_id)
-        _log.info(f'Synced {len(synced)} command(s)')
+        loaded_commands = []
+        for filename in os.listdir('./src/commands'):
+            if filename != '__init__.py' and filename.endswith('.py'):
+                if filename not in loaded_commands:
+                    _log.info(f'loading command {filename[:-3]}')
+                    synced = bot.load_extension(
+                        f'src.commands.{filename[:-3]}',
+                    )
+                    loaded_commands.append(filename)
+                    _log.debug(f'{len(synced)} commands loaded')
+
+        await bot.sync_commands(guild_ids=[settings.DISCORD_SERVER_ID])
+
+        await bot.change_presence(
+            status=discord.Status.online,
+            activity=discord.Activity(
+                type=discord.ActivityType.listening,
+                name='a todos monkeys online',
+            ),
+        )
+
     except Exception as e:
         _log.error(e)
 
 
-@bot.tree.command(name='hello', guild=server_id, description='teste de descrição')
-async def hello(interaction: discord.Interaction):
-    await interaction.response.send_message('Hello World!!')
-
-
-@bot.tree.command(name='help', guild=server_id, description='teste de descrição')
-@app_commands.describe(command='comando que precisa de mais detalhes')
-async def help(interaction: discord.Interaction, command: Optional[str] = None):
+@bot.slash_command(name='help', description='teste de descrição')
+async def help(
+    interaction: discord.Interaction,
+    command: Optional[str] = None,
+):
     if command is None:
         embed = discord.Embed(
             title='Ajuda com comandos',
@@ -45,18 +57,13 @@ async def help(interaction: discord.Interaction, command: Optional[str] = None):
         )
     else:
         desired_command = next(
-            (
-                _command for _command in bot.tree.walk_commands(
-                    guild=server_id,
-                ) if _command.name == command
-            ), None,
+            (_command for _command in bot.commands if _command.name == command), None,
         )
 
         if desired_command is None:
             _log.error('invalid command')
             await interaction.response.send_message(content=f'Comando {command} é inválido.', ephemeral=True)
             return
-
         else:
             _log.info(f"user asked help with command '{desired_command.name}'")
             embed = discord.Embed(
@@ -76,4 +83,15 @@ async def help(interaction: discord.Interaction, command: Optional[str] = None):
 
 
 if __name__ == '__main__':
-    bot.run(settings.DISCORD_TOKEN)
+    # bot.run(settings.DISCORD_TOKEN)
+    async def simulate_on_ready():
+        # Simulando um objeto Event para chamar on_ready
+        event = discord.Raw(
+            data={
+                't': 'READY', 'd': {
+                    'guilds': [], 'user': {},
+                    'session_id': '', 'shard': [0, 1], 'application': {},
+                },
+            },
+        )
+        await bot.dispatch('raw_socket_event', event)

@@ -65,12 +65,17 @@ async def help(interaction: discord.Interaction, command: Optional[str] = None):
                 color=discord.Color.dark_magenta(),
             )
 
-    button = Button(
-        label='Visitar repositório',
+    repo_button = Button(
+        label='Repositório',
         url='https://github.com/Robso-creator/discord_bot',
     )
+    doc_button = Button(
+        label='Documentação',
+        url='https://robso-creator.github.io/discord_bot',
+    )
     view = View()
-    view.add_item(button)
+    view.add_item(repo_button)
+    view.add_item(doc_button)
 
     await interaction.response.send_message(embed=embed, view=view, ephemeral=True)
 

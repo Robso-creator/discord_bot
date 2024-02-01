@@ -1,3 +1,4 @@
+name: pre_merge
 on:
   pull_request:
     branches: [main]

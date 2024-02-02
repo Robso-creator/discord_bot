@@ -35,7 +35,7 @@ async def hello(interaction: discord.Interaction):
 
 
 @bot.tree.command(name='help', guild=server_id, description='teste de descrição')
-@app_commands.describe(command='comando que precisa de mais detalhes')
+@app_commands.describe(command='comando que o usuário precisa de mais detalhes')
 async def help(interaction: discord.Interaction, command: Optional[str] = None):
     if command is None:
         embed = discord.Embed(

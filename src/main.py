@@ -1,10 +1,12 @@
 from typing import Optional
 
 import discord
+import requests
 from discord import app_commands
 from discord.ext import commands
 from discord.ui import Button
 from discord.ui import View
+from googletrans import Translator
 
 from src import settings
 from src.logger import setup_logger
@@ -78,6 +80,37 @@ async def help(interaction: discord.Interaction, command: Optional[str] = None):
     view.add_item(doc_button)
 
     await interaction.response.send_message(embed=embed, view=view, ephemeral=True)
+
+
+@bot.tree.command(name='apod', guild=server_id, description='foto astronômica do dia!')
+async def apod(interaction: discord.Interaction):
+    response = requests.get(
+        f'https://api.nasa.gov/planetary/apod?api_key={settings.NASA_TOKEN}',
+    ).json()
+    img_url = response['url']
+    img_author = response['copyright']
+
+    translator = Translator(service_urls=['translate.googleapis.com'])
+    img_explanation = translator.translate(
+        response['explanation'], dest='pt',
+    ).text
+    img_name = translator.translate(response['title'], dest='pt').text
+
+    translate_append = 'Tradução automática feita utilizando Google Tradutor'
+
+    embed = discord.Embed(
+        title=img_name,
+        description=f'{img_explanation}\n\n{translate_append}',
+        color=discord.Color.dark_magenta(),
+    )
+
+    embed.set_thumbnail(
+        url='https://gpm.nasa.gov/sites/default/files/NASA-Logo-Large.jpg',
+    )  # nasa logo
+    embed.set_image(url=img_url)
+    embed.set_footer(text=f'Autor(es):{img_author}')
+
+    await interaction.response.send_message(embed=embed)
 
 
 if __name__ == '__main__':

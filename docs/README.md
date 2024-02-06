@@ -11,6 +11,8 @@ enriquecer a experiência dos usuários em servidores Discord.
 O bot foi criado para ser flexível, fácil de usar e expansível,
 permitindo a personalização de comandos e integração com outros serviços.
 
+Documentação dos comandos disponível [aqui](https://robso-creator.github.io/discord_bot/commands/)
+
 # Sumário
 
 * [Criação de Tokens necessários](#criação-de-tokens-necessários)

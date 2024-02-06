@@ -7,6 +7,8 @@
 
 This is a Discord bot project developed in Python that offers a variety of features to enhance the user experience on Discord servers. The bot was created to be flexible, user-friendly, and expandable, allowing customization of commands and integration with other services.
 
+Commands documentation available [here](https://robso-creator.github.io/discord_bot/commands/)
+
 # Table of Contents
 
 * [Generating Required Tokens](#generating-required-tokens)
